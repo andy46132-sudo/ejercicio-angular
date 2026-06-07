@@ -1,0 +1,15 @@
+<!-- Interpolación: mostramos en el HTML una propiedad que vive en el .ts -->
+<h1>{{ titulo }}</h1>
+<p>Selecciona a dónde quieres ir:</p>
+
+<div class="botones">
+  <!-- Event binding (click): al hacer clic se llama un método del .ts -->
+  <button (click)="irA('clientes')">Clientes</button>
+  <button (click)="irA('proveedores')">Proveedores</button>
+  <button (click)="irA('empleados')">Empleados</button>
+</div>
+
+<!-- Mostramos la última opción seleccionada solo si existe -->
+@if (ultimaSeleccion) {
+  <p class="info">Última opción seleccionada: {{ ultimaSeleccion }}</p>
+}
