@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 export interface Article {
   id?: string;
   name: string;
-  avatar?: string;
+  description: string;
 }
 
 // @Injectable: marca esta clase como un servicio inyectable.

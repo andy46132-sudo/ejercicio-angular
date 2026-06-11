@@ -16,7 +16,7 @@ export class Articles implements OnInit {
   articles: Article[] = [];
 
   // Modelo del formulario (se enlaza con [(ngModel)] en el HTML)
-  form: Article = { name: '' };
+  form: Article = { name: '', description: '' };
 
   // Si editamos, aquí guardamos el id del artículo en edición
   editandoId: string | null = null;
@@ -43,7 +43,7 @@ export class Articles implements OnInit {
   // Carga un artículo en el formulario para editarlo
   editar(article: Article) {
     this.editandoId = article.id ?? null;
-    this.form = { name: article.name };
+    this.form = { name: article.name, description: article.description };
   }
 
   // DELETE
@@ -53,7 +53,7 @@ export class Articles implements OnInit {
 
   // Limpia el formulario y refresca la lista
   private reiniciar() {
-    this.form = { name: '' };
+    this.form = { name: '', description: '' };
     this.editandoId = null;
     this.cargar();
   }
