@@ -1,6 +1,14 @@
 <h2>Pantalla de Clientes</h2>
-<p>Total de clientes: {{ clientes.length }}</p>
+<p>Total de clientes: {{ clienteslista.length }}</p>
+          
+          <button (click)="CrearCliente()">crear Cliente</button>
+          <p>{{ messaje }}</p>
+          @if (messaje) {
+            <button (click)="Borrartexto()">Borrar Texto</button>
+          }
 
+<h1>{{ titulo }}</h1>
+<h2>{{ titulo2 }}</h2>
 <table>
   <thead>
     <tr>
@@ -13,7 +21,7 @@
   </thead>
   <tbody>
     <!-- @for recorre el arreglo del .ts y crea una fila por cada cliente -->
-    @for (cliente of clientes; track cliente.id) {
+    @for (cliente of clienteslista; track cliente.id) {
       <!-- class binding: marca la fila si es el cliente seleccionado -->
       <tr [class.fila-activa]="cliente === seleccionado">
         <td>{{ cliente.id }}</td>
@@ -22,8 +30,9 @@
         <td>{{ cliente.ciudad }}</td>
         <td>
           <!-- El botón le pasa al .ts el cliente de esta fila -->
-          <button (click)="verDetalle(cliente)">Ver</button>
-        </td>
+          <button (click)="verDetalle(cliente)">Ver Cliente</button>
+        </td> 
+
       </tr>
     }
   </tbody>

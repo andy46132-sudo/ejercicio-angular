@@ -8,11 +8,20 @@ import { RouterLink } from '@angular/router';
 })
 export class Clientes {
   // Estos datos viven en el .ts y se muestran en el .html (databinding)
-  clientes = [
+  clienteslista = [
     { id: 1, nombre: 'Ana Torres', correo: 'ana@correo.com', ciudad: 'Madrid' },
     { id: 2, nombre: 'Luis Gómez', correo: 'luis@correo.com', ciudad: 'Sevilla' },
-    { id: 3, nombre: 'María Ruiz', correo: 'maria@correo.com', ciudad: 'Valencia' }
+    { id: 3, nombre: 'María Ruiz', correo: 'maria@correo.com', ciudad: 'Valencia' },
+    { id: 4, nombre: 'Andy López', correo: 'andy@correo.com', ciudad: 'Copán' }
   ];
+  verDetalle1() {
+    this.seleccionado = "crearclientes";
+    
+    
+  }
+  messaje:string = '';
+  titulo: string = 'pantalla de Clientes';
+  titulo2: string = '  Clientes en mora';
 
   // Guarda el cliente seleccionado; empieza vacío (null)
   seleccionado: any = null;
@@ -20,5 +29,12 @@ export class Clientes {
   // Acción del botón "Ver": guarda el cliente en el que se hizo clic
   verDetalle(cliente: any) {
     this.seleccionado = cliente;
+    
+  }
+  CrearCliente() {
+ this.messaje="se ha guardado el cliente";
+  }
+  Borrartexto() {
+    this.messaje="";
   }
 }
